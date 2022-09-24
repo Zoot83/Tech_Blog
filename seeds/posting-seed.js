@@ -1,0 +1,1 @@
+const { Posting } = require('../models');

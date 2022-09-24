@@ -1,4 +1,4 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -35,11 +35,12 @@ User.init(
         newUser.password = await bcrypt.hash(newUser.password, 10);
         return newUser;
       },
-      beforeBulkUpdate: async (updateUser) => {
+      beforeUpdate: async (updateUser) => {
         updateUser.attributes.password = await bcrypt.hash(
           updateUser.attributes.password,
           10
         );
+        return updateUser;
       },
     },
     sequelize,
