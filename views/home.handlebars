@@ -1,0 +1,22 @@
+<div id='main-content' class='blog-page'>
+  <div class='container page-container'>
+    <div class='row d-flex justify-content-center'>
+      <div class='col-lg-8 col-md-12'>
+        {{#each postings as |posting|}}
+          <div class='card single_post'>
+
+            <div class='body'>
+
+              <h3>{{posting.title}}</h3>
+              <h4>{{posting.text}}</h4>
+              <p>{{posting.user_id}}</p>
+
+            </div>
+
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+</div>
